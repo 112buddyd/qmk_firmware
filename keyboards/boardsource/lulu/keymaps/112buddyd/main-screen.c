@@ -16,7 +16,7 @@
                 oled_write("Base ", false);
                 break;
             case 1:
-                oled_write("Colem", false);
+                oled_write("Game", false);
                 break;
             case 2:
                 oled_write("Ctrl ", false);
