@@ -4,34 +4,32 @@
     #include "luna.c"
 
     static void print_status_narrow(void) {
-        oled_set_cursor(0, 1);
-
-        /* Print current layer */
-        oled_write("Layer", false);
-
-        oled_set_cursor(0, 2);
+        oled_set_cursor(0, 0);
 
         switch (get_highest_layer(layer_state)) {
             case 0:
-                oled_write("Base ", false);
+                oled_write("@BASE", false);
                 break;
             case 1:
-                oled_write("Game", false);
+                oled_write("@GAME", false);
                 break;
             case 2:
-                oled_write("Ctrl ", false);
+                oled_write("@CTRL", false);
                 break;
             case 3:
-                oled_write("Numpd", false);
+                oled_write("@FUNC",false);
                 break;
             default:
-                oled_write("Undef", false);
+                oled_write("WTF", false);
         }
 
-        oled_set_cursor(0,4);
+        oled_set_cursor(0,3);
         oled_write("WPM", false);
-        oled_set_cursor(0,5);
+        oled_set_cursor(0,4);
         oled_write(get_u8_str(get_current_wpm(), '0'), false);
+
+        // oled_set_cursor(0,6);
+
 
         render_luna(0,13);
     }
