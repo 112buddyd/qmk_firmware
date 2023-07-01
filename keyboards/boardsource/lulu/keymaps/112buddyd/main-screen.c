@@ -8,19 +8,22 @@
 
         switch (get_highest_layer(layer_state)) {
             case 0:
-                oled_write("@BASE", false);
+                oled_write("_base", false);
                 break;
             case 1:
-                oled_write("@GAME", false);
+                oled_write("_game", false);
                 break;
             case 2:
-                oled_write("@CTRL", false);
+                oled_write("_cole",false);
                 break;
             case 3:
-                oled_write("@FUNC",false);
+                oled_write("_ctrl", false);
+                break;
+            case 4:
+                oled_write("_func",false);
                 break;
             default:
-                oled_write("WTF", false);
+                oled_write(" WTF ", false);
         }
 
         oled_set_cursor(0,3);
